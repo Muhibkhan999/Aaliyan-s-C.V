@@ -11,36 +11,51 @@
 			justify-content: center;
 			align-items: center;
 			min-height: 100vh;
-			background: #1a1a1a;
-			font-family: Arial, sans-serif;
+			background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+			font-family: 'Segoe UI', Arial, sans-serif;
 		}
 		.container {
 			text-align: center;
+			padding: 40px;
+			background: rgba(255, 255, 255, 0.05);
+			border-radius: 20px;
+			box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+			backdrop-filter: blur(10px);
 		}
 		.progress-bar {
-			width: 300px;
-			height: 20px;
-			background: #333;
-			border-radius: 10px;
+			width: 350px;
+			height: 8px;
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 20px;
 			overflow: hidden;
 			position: relative;
-			margin: 20px auto;
+			margin: 30px auto;
 		}
 		.progress {
 			width: 0%;
 			height: 100%;
-			background: linear-gradient(90deg, #00ff88, #00a6ff);
-			border-radius: 10px;
-			transition: width 3s ease-in-out;
+			background: linear-gradient(90deg, #6366f1, #8b5cf6);
+			border-radius: 20px;
+			transition: width 3s cubic-bezier(0.4, 0, 0.2, 1);
+			box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
 		}
 		h2 {
 			color: #fff;
 			margin-bottom: 30px;
+			font-size: 28px;
+			font-weight: 500;
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 		}
 		.loading-text {
-			color: #fff;
-			font-size: 14px;
-			margin-top: 10px;
+			color: rgba(255, 255, 255, 0.7);
+			font-size: 16px;
+			margin-top: 20px;
+			letter-spacing: 1px;
+			animation: pulse 1.5s ease-in-out infinite;
+		}
+		@keyframes pulse {
+			0%, 100% { opacity: 0.6; }
+			50% { opacity: 1; }
 		}
 	</style>
 </head>
@@ -56,7 +71,7 @@
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
 			const progress = document.getElementById('progress');
-			const destination = 'zen-g-seven.vercel.app/home-vertical.html';
+			const destination = '../zen-g-seven.vercel.app/home-v1.html';
 			
 			// Start progress animation
 			progress.style.width = '100%';
